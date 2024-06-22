@@ -1,0 +1,94 @@
+---
+import Projects from "./Projects.astro";
+
+export const cardData = [
+  {
+    id: 1,
+    imageUrl: "../../public/shoesStore.png",
+    title: "Shoes Store",
+    description: "Shoes Store is a Integrated project created for the Nucba bootcamp. Designed with an intuitive interface and modern technology, our website offers a smooth and secure shopping experience.",
+    description2:  "Using HTML5, CSS3, and JavaScript, we created a responsive and optimized website to ensure you can explore our collection from any device. Explore our athletic shoe trends today!",
+    pastillas: ["React", "JavaScript"],
+    github: "https://github.com/ejemplo/proyecto1",
+    link: "https://ejemplo.com/proyecto1",
+  },
+  {
+    id: 2,
+    imageUrl: "../../public/landingpage.png",
+    title: "Título de la Tarjeta 1",
+    description: "Descripción de la Tarjeta 1",
+    description2: "Descripción de la Tarjeta 1",
+    pastillas: ["React", "JavaScript"],
+    github: "https://github.com/ejemplo/proyecto1",
+    link: "https://ejemplo.com/proyecto1",
+  },
+  {
+    id: 3,
+    imageUrl: "../../public/landingfood.png",
+    title: "Título de la Tarjeta 2",
+    description: "Descripción de la Tarjeta 2",
+    description2: "Descripción de la Tarjeta 2",
+    pastillas: ["React", "Node.js"],
+    github: "https://github.com/ejemplo/proyecto2",
+    link: "https://ejemplo.com/proyecto2",
+  },
+  {
+    id: 4,
+    imageUrl: "../../public/expenseTraker.png",
+    title: "Título de la Tarjeta 2",
+    description: "Descripción de la Tarjeta 2",
+    description2: "Descripción de la Tarjeta 2",
+    pastillas: ["React", "Node.js"],
+    github: "https://github.com/ejemplo/proyecto2",
+    link: "https://ejemplo.com/proyecto2",
+  },
+
+  {
+    id: 5,
+    imageUrl: "../../public/searchMovies.png",
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
+  {
+    id: 6,
+    imageUrl: "../../public/calculadora.png",
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
+  {
+    id: 7,
+    imageUrl: "../../public/time.png",
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
+];
+---
+
+<div>
+  {cardData.map((card) => (
+    <li>
+      <Projects
+        id={card.id}
+        imageUrl={card.imageUrl}
+        title={card.title}
+        description={card.description}
+        description2={card.description2}
+        pastillas={card.pastillas}
+        github={card.github}
+        link={card.link}
+      />
+    </li>
+  ))}
+</div>

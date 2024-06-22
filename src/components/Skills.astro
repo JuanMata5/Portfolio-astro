@@ -1,0 +1,38 @@
+---
+import { skills } from "./IconSkills.astro";
+import Nut from "../icons/Nut.astro";
+
+export interface PropsSkills {
+  name: string;
+  icon: string;
+  id: number;
+}
+---
+
+<section class="skills-container max-w-7xl overflow-hidden ">
+  <h2 class="flex gap-2 text-5xl font-extrabold pt-32">Skills <Nut /></h2>
+  <div class="pt-20 skills-wrapper">
+    {
+      skills.map((skill) => (
+        <div class="mr-20 skill">
+          <div class="w-[50px] h-[100px] hover:transform hover:scale-110 hover:transition duration-500 hover:ease-in-out flex gap-4 flex-col justify-center items-center">
+            <img class=" object-cover" src={skill.icon} alt={skill.name} />
+            <p class="text-xl font-bold">{skill.name}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const skillsWrapper = document.querySelector('.skills-wrapper');
+  const skills = document.querySelectorAll('.skill');
+
+  // Clonar las habilidades
+  for (let i = 0; i < skills.length; i++) {
+    const clone = skills[i].cloneNode(true);
+    skillsWrapper.appendChild(clone);
+  }
+</script>
+

@@ -1,0 +1,119 @@
+---
+import Linkedin from "../icons/Linkedin.astro";
+import Github from "../icons/Github.astro";
+import Email from "../icons/Email.astro";
+import Arrow from "../icons/Arrow.astro";
+import CurriculumVitae from "../icons/CurriculumVitae.astro";
+import Clipboard from "../icons/Clipboard.astro";
+---
+
+<section class="flex xs:flex-wrap xl:flex-nowrap xs:justify-center items-center gap-10 pt-[20vh]">
+  <div class="flex flex-col gap-7 xl:justify-normal xl:items-start xl:text-left  xs:justify-center xs:items-center xs:text-center">
+    <div>
+      <h1 class=" color-changing xl:text-7xl font-extrabold typed-text  uppercase  xs:text-6xl md:text-5xl ">
+        Juan Jose Mata. <i class="devicon-bootstrap-plain"></i>
+      </h1>
+      <h2
+        class="color-changing  xl:text-7xl font-extrabold  mt-4 typed-text-h2 uppercase xs:text-6xl md:text-5xl   "
+      >
+        FullStack
+      </h2>
+      <h3
+        class=" color-changing  xl:text-7xl font-extrabold  mt-4 typed-text-h2 uppercase xs:text-6xl md:text-5xl "
+      >
+        Developer
+      </h3>
+    </div>
+    <p class="text-xl text-gray-300">
+      +1 years of expience Developing web applications, i am from Buenos Aires,
+      Argentina. Specialized in solving problems and creating efficient
+      applications.
+    </p>
+
+    <div class="flex flex-col gap-6 pt-2">
+      <span class="flex gap-5 flex-wrap">
+        <a
+          href=""
+          class="hover:text-white hover:scale-110 transition-all 1s ease-in-out font-bold flex items-center gap-1 text-xl bg-black text-cyan-300 p-2 pr-4 pl-4 rounded-lg"
+        >
+          See More about me <span class="text-cyan-300"><Arrow /></span>
+        </a>
+        <a
+          href=""
+          class="flex items-center gap-1 font-bold hover:scale-110 transition-all 1s ease-in-out text-xl bg-black p-2 pr-4 pl-4 rounded-lg hover:text-cyan-300"
+          >Download <CurriculumVitae /></a
+        >
+      </span>
+
+      <span class="flex gap-5 flex-wrap">
+        <a
+          href=""
+          class="flex items-center gap-1 text-lg bg-black p-2 pr-4 pl-4 rounded-lg hover:text-cyan-300 hover:scale-110 transition-all 1s ease-in-out"
+          ><Linkedin /> Linkedin</a
+        >
+        <a
+          href=""
+          class="flex items-center gap-1 text-lg bg-black p-2 pr-4 pl-4 rounded-lg hover:text-cyan-300 hover:scale-110 transition-all 1s ease-in-out"
+          ><Github /> GitHub</a
+        >
+        <a
+          class="flex items-center gap-1 text-lg bg-black p-2 pr-4 pl-4 rounded-lg"
+        >
+          <Email />
+          <span id="email"> jujuusmata@gmail.com </span>
+          <div class="hover:text-white" client-only>
+            <button
+              id="copy-btn"
+              class="hover:text-white focus:outline-none ml-2 bg-cyan-800 p-1.5 rounded-lg cursor-pointer hover:scale-110 transition-all 1s ease-in-out"
+              ><Clipboard /></button
+            >
+          </div>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <a
+    href="https://github.com/JuanMata5"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="w-[60%]"
+  >
+    <img
+      class="rounded-full  xl:flex cursor-pointer  hover:scale-110 transition-all 1s ease-in-out"
+      src="https://avatars.githubusercontent.com/u/130296809?s=400&u=cdbdd69b1658c22885a7775114047fc558fd9693&v=4"
+      alt=""
+    />
+  </a>
+
+  <script>
+    type HTMLButtonElementOrUndefined = HTMLButtonElement | null;
+    type HTMLElementOrUndefined = HTMLElement | null;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const copyButton: HTMLButtonElementOrUndefined = document.getElementById(
+        "copy-btn"
+      ) as HTMLButtonElementOrUndefined;
+      copyButton?.addEventListener("click", copyToClipboard);
+    });
+
+    export function copyToClipboard() {
+      const emailSpan: HTMLElementOrUndefined = document.getElementById(
+        "email"
+      ) as HTMLElementOrUndefined;
+      const emailText: string | undefined = emailSpan?.innerText.trim();
+
+      if (emailText) {
+        navigator.clipboard.writeText(emailText);
+
+        const button: HTMLButtonElementOrUndefined = document.getElementById(
+          "copy-btn"
+        ) as HTMLButtonElementOrUndefined;
+        if (button) {
+          button.textContent = "Copied!";
+          button.style.fontSize = "14px";
+        }
+      }
+    }
+  </script>
+</section>

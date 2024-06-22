@@ -1,0 +1,151 @@
+---
+import "@fontsource/poppins";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="">
+    <div class="p-10 xl:max-w-7xl sm:max-w-5xl mx-auto">
+      <header  >
+        <Header />
+      </header>
+      <slot />
+
+    </div>
+
+    <Footer/>
+    
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  html {
+    font-family: "poppins", sans-serif;
+    background: #13151a;
+    color-scheme: light dark;
+  }
+
+  .fixed {
+      position: fixed;
+      width: 100%;
+      top: 30px; /* Cambia esto al valor inicial */
+      left: 0;
+      z-index: 50;
+      transition: top 0.3s ease-in-out;
+    }
+
+   
+
+  
+  body {
+    min-height: 100vh;
+  }
+
+  .color-changing {
+  animation: changeColor 6s infinite;
+}
+
+
+
+
+
+// ANIMACION DEL HERO //
+
+@keyframes changeColor {
+  0%, 32.33% {
+    color: rgb(255, 255, 255); /* Blanco */
+  }
+  100%, 66.66% {
+    color: cyan; /* Cyan */
+  }
+  66.67%, 100% {
+    color: rgb(255, 255, 255); /* Blanco */
+  }
+}
+
+h1.color-changing {
+  animation-delay: 0s; /* No hay retraso para el h1 */
+}
+
+h2.color-changing {
+  animation-delay: 2s; /* Retraso de 4 segundos para el h2 */
+}
+
+h3.color-changing {
+  animation-delay: 4s; /* Retraso de 8 segundos para el h3 */
+}
+
+.image-container {
+  overflow: hidden; /* Oculta el exceso de la imagen */
+}
+
+.zoom-image {
+  transition: transform 0.3s ease; /* Añade una transición suave al zoom */
+}
+
+.zoom-image:hover {
+  transform: scale(1.1); /* Aplica un zoom del 10% al hacer hover */
+}
+
+// ANIMACION DE SKILLS //
+.skills-container {
+  overflow: hidden; /* Oculta el contenido que se sale del contenedor */
+  
+}
+
+.skills-wrapper {
+  display: flex; /* Permite que el contenido se desplace horizontalmente */
+  gap: 60px; /* Espacio entre las habilidades */
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap; /* Para que las habilidades estén en una sola fila */
+  animation: scroll 15s linear infinite; /* Animación de desplazamiento infinito */
+}
+
+@keyframes scroll {
+  
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+  
+}
+
+.skill {
+  margin-right: 30px;
+}
+
+.skill:last-child {
+  margin-right: 0;
+}
+</style>
