@@ -18,19 +18,20 @@
 
 <script>
   window.addEventListener('scroll', function() {
-    const navigation = document.querySelector('.navigation');
-    if (window.scrollY > 20) {
-      navigation.style.color = 'cyan';
-    }else {
-      navigation.style.color = 'white';
-    }
+    const navigations = document.querySelectorAll('.navigation');
+    navigations.forEach(navigation => {
+      if (window.scrollY > 20) {
+        navigation.style.color = 'cyan';
+      } else {
+        navigation.style.color = 'white';
+      }
+    });
 
     const header = document.querySelector('.fixed');
     if (window.scrollY > 20) {
-      header.style.top = '0px'; // Cambia el valor de acuerdo a lo que necesites
+      header.style.top = '0px'; 
     } else {
-      header.style.top = '30px'; // El valor inicial
+      header.style.top = '30px'; 
     }
   });
 </script>
-
