@@ -17,18 +17,16 @@
 </header>
 
 <script>
-  window.addEventListener('scroll', () => {
-    const navigations = document.querySelectorAll('.navigation');
+  const navigations = document.querySelectorAll('.navigation');
+navigations.forEach(navigation => {
+  if (navigation instanceof HTMLElement) {
+    navigation.style.color = window.scrollY > 20 ? 'cyan' : 'white';
+  }
+});
 
-    navigations.forEach(navigation => {
-      if (navigation instanceof HTMLElement) {
-        navigation.style.color = window.scrollY > 20 ? 'cyan' : 'white';
-      }
-    });
+const header = document.querySelector('.fixed');
+if (header instanceof HTMLElement) {
+  header.style.top = window.scrollY > 20 ? '0px' : '30px';
+}
 
-    const header = document.querySelector('.fixed');
-    if (header instanceof HTMLElement) {
-      header.style.top = window.scrollY > 20 ? '0px' : '30px';
-    }
-  });
 </script>
