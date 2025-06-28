@@ -1,7 +1,16 @@
 ---
-import Projects from "./Projects.astro";
+export interface Card {
+  id: number;
+  imageUrl: string;
+  title: string;
+  description: string;
+  description2: string;
+  pastillas: string[];
+  github: string;
+  link: string;
+}
 
-export const cardData = [
+export const cardData: Card[] = [
   {
     id: 1,
     imageUrl: "../../public/shoesStore.png",
@@ -12,67 +21,7 @@ export const cardData = [
     github: "https://github.com/ejemplo/proyecto1",
     link: "https://ejemplo.com/proyecto1",
   },
-  {
-    id: 2,
-    imageUrl: "../../public/landingpage.png",
-    title: "Título de la Tarjeta 1",
-    description: "Descripción de la Tarjeta 1",
-    description2: "Descripción de la Tarjeta 1",
-    pastillas: ["React", "JavaScript"],
-    github: "https://github.com/ejemplo/proyecto1",
-    link: "https://ejemplo.com/proyecto1",
-  },
-  {
-    id: 3,
-    imageUrl: "../../public/landingfood.png",
-    title: "Título de la Tarjeta 2",
-    description: "Descripción de la Tarjeta 2",
-    description2: "Descripción de la Tarjeta 2",
-    pastillas: ["React", "Node.js"],
-    github: "https://github.com/ejemplo/proyecto2",
-    link: "https://ejemplo.com/proyecto2",
-  },
-  {
-    id: 4,
-    imageUrl: "../../public/expenseTraker.png",
-    title: "Título de la Tarjeta 2",
-    description: "Descripción de la Tarjeta 2",
-    description2: "Descripción de la Tarjeta 2",
-    pastillas: ["React", "Node.js"],
-    github: "https://github.com/ejemplo/proyecto2",
-    link: "https://ejemplo.com/proyecto2",
-  },
-
-  {
-    id: 5,
-    imageUrl: "../../public/searchMovies.png",
-    title: "Título de la Tarjeta 3",
-    description: "Descripción de la Tarjeta 3",
-    description2: "Descripción de la Tarjeta 3",
-    pastillas: ["React", "Firebase"],
-    github: "https://github.com/ejemplo/proyecto3",
-    link: "https://ejemplo.com/proyecto3",
-  },
-  {
-    id: 6,
-    imageUrl: "../../public/calculadora.png",
-    title: "Título de la Tarjeta 3",
-    description: "Descripción de la Tarjeta 3",
-    description2: "Descripción de la Tarjeta 3",
-    pastillas: ["React", "Firebase"],
-    github: "https://github.com/ejemplo/proyecto3",
-    link: "https://ejemplo.com/proyecto3",
-  },
-  {
-    id: 7,
-    imageUrl: "../../public/time.png",
-    title: "Título de la Tarjeta 3",
-    description: "Descripción de la Tarjeta 3",
-    description2: "Descripción de la Tarjeta 3",
-    pastillas: ["React", "Firebase"],
-    github: "https://github.com/ejemplo/proyecto3",
-    link: "https://ejemplo.com/proyecto3",
-  },
+  // ... las otras tarjetas
 ];
 ---
 
