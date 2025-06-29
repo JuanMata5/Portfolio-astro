@@ -27,12 +27,14 @@ export interface PropsSkills {
 
 <script>
   const skillsWrapper = document.querySelector('.skills-wrapper');
-  const skills = document.querySelectorAll('.skill');
+const skills = document.querySelectorAll('.skill');
 
-  // Clonar las habilidades
+if (skillsWrapper) {
   for (let i = 0; i < skills.length; i++) {
     const clone = skills[i].cloneNode(true);
     skillsWrapper.appendChild(clone);
   }
+}
+
 </script>
 
