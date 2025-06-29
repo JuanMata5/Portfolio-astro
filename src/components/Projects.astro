@@ -1,7 +1,16 @@
 ---
-interface Props {
-  
+export interface Props {
+  id: number;
+  imageUrl: string;
+  title: string;
+  description: string;
+  description2: string;
+  pastillas: string[];
+  github: string;
+  link: string;
 }
+
+const { id, imageUrl, title, description, description2, pastillas, github, link }: Props = Astro.props;
 
 import { cardData } from "../components/CardProjects.astro";
 import Code from "../icons/Code.astro";
