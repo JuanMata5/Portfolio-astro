@@ -12,10 +12,18 @@ export interface Card {
   link: string;
 }
 
-export const cardData: Card[] = [
+import shoesStoreImg from "../assets/shoesStore.png";
+import landingPageImg from "../assets/landingpage.png";
+import landingFoodImg from "../assets/landingfood.png";
+import expenseTrackerImg from "../assets/expenseTraker.png";
+import searchMoviesImg from "../assets/searchMovies.png";
+import calculadoraImg from "../assets/calculadora.png";
+import timeImg from "../assets/time.png";
+
+export const cardData = [
   {
     id: 1,
-    imageUrl: "../../public/shoesStore.png",
+    imageUrl: shoesStoreImg,
     title: "Shoes Store",
     description: "Shoes Store is a Integrated project created for the Nucba bootcamp. Designed with an intuitive interface and modern technology, our website offers a smooth and secure shopping experience.",
     description2:  "Using HTML5, CSS3, and JavaScript, we created a responsive and optimized website to ensure you can explore our collection from any device. Explore our athletic shoe trends today!",
@@ -23,7 +31,66 @@ export const cardData: Card[] = [
     github: "https://github.com/ejemplo/proyecto1",
     link: "https://ejemplo.com/proyecto1",
   },
-  // ... las otras tarjetas
+  {
+    id: 2,
+    imageUrl: landingPageImg,
+    title: "Título de la Tarjeta 1",
+    description: "Descripción de la Tarjeta 1",
+    description2: "Descripción de la Tarjeta 1",
+    pastillas: ["React", "JavaScript"],
+    github: "https://github.com/ejemplo/proyecto1",
+    link: "https://ejemplo.com/proyecto1",
+  },
+  {
+    id: 3,
+    imageUrl: landingFoodImg,
+    title: "Título de la Tarjeta 2",
+    description: "Descripción de la Tarjeta 2",
+    description2: "Descripción de la Tarjeta 2",
+    pastillas: ["React", "Node.js"],
+    github: "https://github.com/ejemplo/proyecto2",
+    link: "https://ejemplo.com/proyecto2",
+  },
+  {
+    id: 4,
+    imageUrl: expenseTrackerImg,
+    title: "Título de la Tarjeta 2",
+    description: "Descripción de la Tarjeta 2",
+    description2: "Descripción de la Tarjeta 2",
+    pastillas: ["React", "Node.js"],
+    github: "https://github.com/ejemplo/proyecto2",
+    link: "https://ejemplo.com/proyecto2",
+  },
+  {
+    id: 5,
+    imageUrl: searchMoviesImg,
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
+  {
+    id: 6,
+    imageUrl: calculadoraImg,
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
+  {
+    id: 7,
+    imageUrl: timeImg,
+    title: "Título de la Tarjeta 3",
+    description: "Descripción de la Tarjeta 3",
+    description2: "Descripción de la Tarjeta 3",
+    pastillas: ["React", "Firebase"],
+    github: "https://github.com/ejemplo/proyecto3",
+    link: "https://ejemplo.com/proyecto3",
+  },
 ];
 ---
 
